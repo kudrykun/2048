@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>clear-sans/ClearSans-Bold.ttf</file>
+        <file>clear-sans/ClearSans-BoldItalic.ttf</file>
+        <file>clear-sans/ClearSans-Italic.ttf</file>
+        <file>clear-sans/ClearSans-Light.ttf</file>
+        <file>clear-sans/ClearSans-Medium.ttf</file>
+        <file>clear-sans/ClearSans-MediumItalic.ttf</file>
+        <file>clear-sans/ClearSans-Regular.ttf</file>
+        <file>clear-sans/ClearSans-Thin.ttf</file>
+    </qresource>
+</RCC>

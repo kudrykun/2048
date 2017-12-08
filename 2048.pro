@@ -25,7 +25,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    roundedrect.cpp \
+    gamescene.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    roundedrect.h \
+    gamescene.h
+
+RESOURCES += \
+    resources.qrc
