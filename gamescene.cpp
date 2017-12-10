@@ -1,4 +1,6 @@
 #include "gamescene.h"
+#include <QDebug>
+
 GameScene::GameScene(QObject *parent)
 {
     setSceneRect(0,0,700,900);
@@ -12,11 +14,12 @@ GameScene::GameScene(QObject *parent)
     text->setY(100);
     text->setDefaultTextColor(QColor(119,110,101));
 
+    setupField();
     //filling default field
     addRoundedRect(100,250,500,500,6,QPen(Qt::transparent),QBrush(QColor(187,173,160)));
-    for(int i = 0; i < 4; i++){
+    for(int i = 0; i < field->size(); i++){
         int y = 265 + i * (15 + 106.25);
-        for(int j = 0; j < 4; j++){
+        for(int j = 0; j < field[0].size(); j++){
             int x = 115 + j * (15 + 106.25);
             addRoundedRect(x,y,106.25,106.25,3,QPen(Qt::transparent),QBrush(QColor(205,192,180)));
         }
@@ -28,4 +31,27 @@ RoundedRect *GameScene::addRoundedRect(qreal x, qreal y, qreal w, qreal h, qreal
     RoundedRect *rect = new RoundedRect(x,y,w,h,r,pen,brush);
     addItem(rect);
     return rect;
+}
+
+void GameScene::keyPressEvent(QKeyEvent *keyEvent)
+{
+    switch(keyEvent->key()){
+    case Qt::Key_Up:
+        qDebug() << "Вверх";
+        break;
+    case Qt::Key_Down:
+        qDebug() << "Вниз";
+        break;
+    case Qt::Key_Left:
+        qDebug() << "Влево";
+        break;
+    case Qt::Key_Right:
+        qDebug() << "Вправо";
+        break;
+    }
+}
+
+void GameScene::setupField(int w, int h)
+{
+    field = new QVector<QVector<int>>(h, QVector<int>(w, 0));
 }
